@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+
+env:
+    DOTNET_VERSION: 9.0.x
+    DOTNET_CLI_TELEMETRY_OPTOUT: 1
+
+jobs:
+
+  make-build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest, macOS-13]
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Build Debug
+      run: dotnet build -c Debug
+
+    - name: Build Release
+      run: dotnet build -c Release
