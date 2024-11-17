@@ -31,3 +31,9 @@ jobs:
 
     - name: Build Release
       run: dotnet build -c Release
+
+    - name: Test Debug
+      run: dotnet test -c Debug --no-build
+
+    - name: Test Release
+      run: dotnet build -c Release --no-build

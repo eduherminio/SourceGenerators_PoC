@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Generator", "Library.Generator\Library.Generator.csproj", "{06CAEE75-E1AA-4576-9F9A-E9DF21CD3DB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Generator.Test", "Library.Generator.Test\Library.Generator.Test.csproj", "{AECF8AC0-3F25-4533-93A0-3BA37FA0AC3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{06CAEE75-E1AA-4576-9F9A-E9DF21CD3DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06CAEE75-E1AA-4576-9F9A-E9DF21CD3DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06CAEE75-E1AA-4576-9F9A-E9DF21CD3DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AECF8AC0-3F25-4533-93A0-3BA37FA0AC3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AECF8AC0-3F25-4533-93A0-3BA37FA0AC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AECF8AC0-3F25-4533-93A0-3BA37FA0AC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AECF8AC0-3F25-4533-93A0-3BA37FA0AC3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

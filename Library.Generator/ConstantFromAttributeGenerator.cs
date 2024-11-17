@@ -77,8 +77,8 @@ public class ConstantFromAttributeGenerator : IIncrementalGenerator
         {
             const short DefaultShortValue = 32_323;
 
-            int mg = DefaultShortValue;
-            int eg = DefaultShortValue;
+            short mg = DefaultShortValue;
+            short eg = DefaultShortValue;
 
             if (semanticModel.GetDeclaredSymbol(variableDeclarationSyntax) is not IFieldSymbol variableSymbol)
             {
@@ -164,8 +164,7 @@ public class ConstantFromAttributeGenerator : IIncrementalGenerator
                 return Model.DefaultValue;
             }
 
-            // Utils.Pack(mg, eg)
-            return (eg << 16) + mg;
+            return Utils.Pack(mg, eg);
         }
     }
 

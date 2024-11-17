@@ -62,7 +62,7 @@ public class ConstantFromInitializerGenerator : IIncrementalGenerator
 
                     if (mg != Model.DefaultShortValue && eg != Model.DefaultShortValue)
                     {
-                        return (eg << 16) + mg;
+                        return Utils.Pack(mg, eg);
                     }
 
                     return 777_777_777;
