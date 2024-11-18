@@ -399,3 +399,8 @@ FodyWeavers.xsd
 
 # Verify exclusions
 **/Snapshots/*.g.received.cs
+
+
+# Exclude all source generators output but ours
+**/Generated/*
+!**/Generated/Library.Generator/
