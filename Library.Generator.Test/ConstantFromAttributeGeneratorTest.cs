@@ -8,7 +8,6 @@ public class ConstantFromAttributeGeneratorTest
     [Test]
     public Task StaticClass()
     {
-        // The source code to test
         const string source = @"
 using namespace Library.Generator;
 
@@ -18,14 +17,12 @@ public static partial class TestClass
     public static readonly int _TestConstant;
 }";
 
-        // Pass the source code to our helper and snapshot test the output
         return Verify(source);
     }
 
     [Test]
     public Task NonStaticClass()
     {
-        // The source code to test
         const string source = @"
 using namespace Library.Generator;
 
@@ -35,7 +32,6 @@ public partial class TestClass
     public static readonly int _TestConstant;
 }";
 
-        // Pass the source code to our helper and snapshot test the output
         return Verify(source);
     }
 
@@ -52,14 +48,27 @@ public partial class TestClass
     private static readonly int _TestConstant;
 }";
 
-        // Pass the source code to our helper and snapshot test the output
+        return Verify(source);
+    }
+
+    [Test]
+    public Task NamedArguments()
+    {
+        const string source = @"
+using namespace Library.Generator;
+
+public partial class TestClass
+{
+    [GeneratedPack(mg : -1, eg : -2)]
+    private static readonly int _TestConstant;
+}";
+
         return Verify(source);
     }
 
     [Test]
     public Task NoNamespaceImport_ShouldNotGenerateConstant()
     {
-        // The source code to test
         const string source = @"
 public partial class TestClass
 {
@@ -67,14 +76,12 @@ public partial class TestClass
     private static readonly int _TestConstant;
 }";
 
-        // Pass the source code to our helper and snapshot test the output
         return Verify(source);
     }
 
     [Test]
     public Task NoAttributes_ShouldNotGenerateConstant()
     {
-        // The source code to test
         const string source = @"
 using namespace Library.Generator;
 
@@ -83,7 +90,6 @@ public partial class TestClass
     private static readonly int _TestConstant;
 }";
 
-        // Pass the source code to our helper and snapshot test the output
         return Verify(source);
     }
 
