@@ -126,6 +126,22 @@ public partial class TestClass
         return Verify(source);
     }
 
+    [Test]
+    public Task TwoAttributes_ShouldNotGenerateConstant()
+    {
+        const string source = @"
+using namespace Library.Generator;
+
+public partial class TestClass
+{
+    [GeneratedPack(1, 2)]
+    [GeneratedPack(1, 3)]
+    private static readonly int _TestConstant;
+}";
+
+        return Verify(source);
+    }
+
     /// <summary>
     /// Based on: https://andrewlock.net/creating-a-source-generator-part-2-testing-an-incremental-generator-with-snapshot-testing/
     /// https://github.com/andrewlock/blog-examples/blob/c35edf1c1f0e1f9adf84c215e2ce7ab644b374f5/NetEscapades.EnumGenerators2/tests/NetEscapades.EnumGenerators.Tests/cs
